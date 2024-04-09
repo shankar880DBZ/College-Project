@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload</title>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- CUSTOM CSS FILE -->
+	<link rel="stylesheet" href="/stylesheets/upload/upload.css">
+
+
+</head>
+
+<body>
+
+	<div class="container" id="container">
+		<form action="/admin/upload" method="post" enctype="multipart/form-data">
+			<h1>upload</h1>
+			<input type="text" placeholder="Horizontal thumbnail" name="thumbnail_h" />
+			<input type=" text" placeholder="Vertical thumbnail" name="thumbnail_v" />
+			<input type="text" placeholder="Movie Title" name="movieTitle" />
+			<input type="text" placeholder="rating" name="rating">
+			<input type="text" placeholder="duration" name="duration">
+			<input type="text" placeholder="description" name="description" />
+			<input type="file" name="file">
+			<select name="type">
+				<option value="anime">Anime</option>
+				<option value="movie">Movie</option>
+				<option value="series">Series</option>
+			</select>
+			<div class="check">
+				<input type="checkbox" name="slide">Slide
+				<input type="checkbox" name="special">Special
+				<input type="checkbox" name="latest">Latest
+				<input type="checkbox" name="top">Top
+				<input type="checkbox" name="popular">Popular
+				<input type="checkbox" name="movieTrue">AnimeMovie
+			</div>
+			<button>upload</button>
+		</form>
+	</div>
+
+
+
+
+	<script src="/javascripts/Login/Login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+section 
+{
+	margin: 20px;
+	margin-bottom: 50px;
+}
+.row-info 
+{
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.col-info
+{
+	width: 50%;
+}
+.shadow img 
+{
+	width: 100%;
+}
+
+.profile-text 
+{
+	width: 50%;	
+	font-size: 35px;
+	text-align: center;
+	margin: 10% auto;
+}
+.col-aboutme 
+{
+	width: 100%;
+	padding: 0px 50px;
+	font-size: 18px;
+	margin-bottom: 30px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:1204px) 
+{
+	.profile-text
+	{
+		font-size: 18px;
+		margin: 5% auto;
+	}
+}

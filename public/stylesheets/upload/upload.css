@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0px auto;
+}
+
+.container {
+  background-color: rgb(208, 202, 202);
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px #000;
+  position: relative;
+  overflow: hidden;
+  width: 600px;
+  max-width: 100%;
+  min-height: 480px;
+  padding: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+input {
+  background: #eee;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  border: none;
+  padding: 8px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+input:hover {
+  box-shadow: 0px 3px 10 px black;
+  cursor: pointer;
+  transition: all ease 0.6s;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #ff4b2b;
+  background: #ff445c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  margin-top: 30px;
+}
+button:hover {
+  cursor: pointer;
+  background: #f33647;
+  color: #fff;
+  box-shadow: 0px 1px 5px black;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:focus {
+  outline: none;
+}
+.check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.check div {
+  width: 100%;
+}
+.check div input {
+  width: 10%;
+}

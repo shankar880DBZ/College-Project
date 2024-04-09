@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>
+		webSeries
+	</title>
+	<!-- GOOGLE FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<!-- OWL CAROUSEL -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+		integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+		crossorigin="anonymous" />
+	<!-- BOX ICONS -->
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	<!-- remix icons  -->
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+	<!-- APP CSS -->
+	<link rel="stylesheet" href="/stylesheets/Series/grid.css">
+	<link rel="stylesheet" href="/stylesheets/Series/Stylesheet.css">
+	<% include ./partials/navbar.ejs %>
+
+		<!-- HERO SECTION -->
+		<div class="hero-section">
+			<!-- HERO SLIDE -->
+			<div class="hero-slide">
+				<div class="owl-carousel carousel-nav-center" id="hero-carousel">
+					<!-- SLIDE ITEM -->
+					<% slideSeries.forEach(function(element) { %>
+						<div class="hero-slide-item">
+							<img src=" <%= element.thumbnail_h %>" alt="">
+							<div class="overlay"></div>
+							<div class="hero-slide-item-content">
+								<div class="item-content-wraper">
+									<div class="item-content-title top-down">
+										<%= element.title %>
+									</div>
+									<div class="movie-infos top-down delay-2">
+										<div class="movie-info">
+											<i class="bx bxs-star"></i>
+											<span>
+												<%= element.rating %>
+											</span>
+										</div>
+										<div class="movie-info">
+											<i class="bx bxs-time"></i>
+											<span>
+												<%= element.duration %> mins
+											</span>
+										</div>
+										<div class="movie-info">
+											<span>HD</span>
+										</div>
+										<div class="movie-info">
+											<span>16+</span>
+										</div>
+									</div>
+									<div class="item-content-description top-down delay-4">
+										<%= element.description %>
+									</div>
+									<div class="item-action top-down delay-6">
+										<a href="/home/video-player/<%= element.title %>" class="btn btn-hover">
+											<i class="bx bxs-right-arrow"></i>
+											<span>Watch now</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<% }) %>
+							<!-- END SLIDE ITEM -->
+
+				</div>
+			</div>
+			<!-- END HERO SLIDE -->
+			<!-- TOP MOVIES SLIDE -->
+			<div class="top-movies-slide">
+				<div class="owl-carousel" id="top-movies-slide">
+					<!-- MOVIE ITEM -->
+					<% topSeries.forEach(function(element) { %>
+						<a href="/home/video-player/<%= element.title %>">
+							<div class="movie-item">
+								<img src="<%= element.thumbnail_v %>" alt="">
+								<div class="movie-item-content">
+									<div class="movie-item-title">
+										<%= element.title %>
+									</div>
+									<div class="movie-infos">
+										<div class="movie-info">
+											<i class="bx bxs-star"></i>
+											<span>
+												<%= element.rating %>
+											</span>
+										</div>
+										<div class="movie-info">
+											<i class="bx bxs-time"></i>
+											<span>
+												<%= element.duration %>mins
+											</span>
+										</div>
+										<div class="movie-info">
+											<span>HD</span>
+										</div>
+										<div class="movie-info">
+											<span>16+</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</a>
+						<% }) %>
+							<!-- END MOVIE ITEM -->
+				</div>
+			</div>
+			<!-- END TOP MOVIES SLIDE -->
+		</div>
+		<!-- END HERO SECTION -->
+
+		<!-- POPULAR WEB SERIES SECTION -->
+		<div class="section">
+			<div class="container">
+				<div class="section-header">
+					Popular web series
+					<div class="More"><a href="/Series/more/popular">More <i class="ri-arrow-right-s-line"></i></a>
+					</div>
+				</div>
+				<div class="movies-slide carousel-nav-center owl-carousel">
+					<!-- MOVIE ITEM -->
+					<% popularSeries.forEach(function(element) { %>
+						<a href="/home/video-player/<%= element.title %>" class="movie-item">
+							<img src="<%= element.thumbnail_v %>" alt="">
+							<div class="movie-item-content">
+								<div class="movie-item-title">
+									<%= element.title %>
+								</div>
+								<div class="movie-infos">
+									<div class="movie-info">
+										<i class="bx bxs-star"></i>
+										<span>
+											<%= element.rating %>
+										</span>
+									</div>
+									<div class="movie-info">
+										<i class="bx bxs-time"></i>
+										<span>
+											<%= element.duration %> mins
+										</span>
+									</div>
+									<div class="movie-info">
+										<span>HD</span>
+									</div>
+									<div class="movie-info">
+										<span>16+</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<% }) %>
+							<!-- END MOVIE ITEM -->
+				</div>
+			</div>
+		</div>
+		<!-- END POPULAR WEB SERIES SECTION -->
+
+
+		<!-- TOP PICK FOR YOU WEB SERIES SECTION -->
+		<div class="section">
+			<div class="container">
+				<div class="section-header">
+					top pick for you web series
+					<div class="More"><a href="/Series/more/topseries">More <i class="ri-arrow-right-s-line"></i></a>
+					</div>
+				</div>
+				<div class="movies-slide carousel-nav-center owl-carousel">
+					<!-- MOVIE ITEM -->
+					<% topPicSeries.forEach(function(element) { %>
+						<a href="/home/video-player/<%= element.title %>" class="movie-item">
+							<img src="<%= element.thumbnail_v %>" alt="">
+							<div class="movie-item-content">
+								<div class="movie-item-title">
+									<%= element.title %>
+								</div>
+								<div class="movie-infos">
+									<div class="movie-info">
+										<i class="bx bxs-star"></i>
+										<span>
+											<%= element.rating %>
+										</span>
+									</div>
+									<div class="movie-info">
+										<i class="bx bxs-time"></i>
+										<span>
+											<%= element.duration %> mins
+										</span>
+									</div>
+									<div class="movie-info">
+										<span>HD</span>
+									</div>
+									<div class="movie-info">
+										<span>16+</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<% }) %>
+							<!-- END MOVIE ITEM -->
+				</div>
+			</div>
+		</div>
+		<!-- END TOP PICK FOR YOU WEB SERIES SECTION -->
+
+
+		<!-- LATEST WEB SERIES SECTION -->
+		<div class="section">
+			<div class="container">
+				<div class="section-header">
+					latest web series
+					<div class="More"><a href="/Series/more/latestSeries">More <i class="ri-arrow-right-s-line"></i></a>
+					</div>
+				</div>
+				<div class="movies-slide carousel-nav-center owl-carousel">
+					<!-- MOVIE ITEM -->
+					<% latestSeries.forEach(function(element) { %>
+						<a href="/home/video-player/<%= element.title %>" class="movie-item">
+							<img src="	<%= element.thumbnail_v %>" alt="">
+							<div class="movie-item-content">
+								<div class="movie-item-title">
+									<%= element.title %>
+								</div>
+								<div class="movie-infos">
+									<div class="movie-info">
+										<i class="bx bxs-star"></i>
+										<span>
+											<%= element.rating %>
+										</span>
+									</div>
+									<div class="movie-info">
+										<i class="bx bxs-time"></i>
+										<span>
+											<%= element.duration %> mins
+										</span>
+									</div>
+									<div class="movie-info">
+										<span>HD</span>
+									</div>
+									<div class="movie-info">
+										<span>16+</span>
+									</div>
+								</div>
+							</div>
+						</a>
+						<% }) %>
+							<!-- END MOVIE ITEM -->
+				</div>
+			</div>
+		</div>
+		<!-- END LATEST WEB SERIES SECTION -->
+		<% include ./partials/footer.ejs %>
+			<!-- SCRIPT -->
+			<!-- JQUERY -->
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+				integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+			<!-- OWL CAROUSEL -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+				integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+				crossorigin="anonymous"></script>
+
+			<!-- APP SCRIPT -->
+			<script src="/javascripts/Series/JavaScript.js" defer></script>
+
+			</body>
+
+</html>
